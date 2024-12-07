@@ -2,13 +2,8 @@ package net.abitmorehex.casting.patterns.math
 
 import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.api.spell.ConstMediaAction
-import at.petrak.hexcasting.api.spell.asActionResult
 import at.petrak.hexcasting.api.spell.casting.CastingContext
-import at.petrak.hexcasting.api.spell.iota.DoubleIota
-import at.petrak.hexcasting.api.spell.iota.Iota
-import at.petrak.hexcasting.api.spell.iota.ListIota
-import at.petrak.hexcasting.api.spell.iota.NullIota
-import at.petrak.hexcasting.api.spell.iota.Vec3Iota
+import at.petrak.hexcasting.api.spell.iota.*
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Vec3d
 
@@ -18,19 +13,17 @@ class OpBlockRaycastWithBacktrack : ConstMediaAction {
 
     override fun execute(args: List<Iota>, ctx: CastingContext): List<Iota> {
         val origin = (args[0] as Vec3Iota).vec3
-        val look = (args[1] as Vec3Iota).vec3
-        val backtrackDistance = (args[2] as DoubleIota).double
+        val direction = (args[1] as Vec3Iota).vec3.normalize() // Use look as the direction
+        val forwardDistance = (args[2] as DoubleIota).double
 
         ctx.assertVecInRange(origin)
 
-        // Calculate the normalized direction vector
-        val direction = look.subtract(origin).normalize()
         var currentPos = origin
         var blockHitResult: BlockPos? = null
 
         // Manual raycast by stepping along the vector
         for (i in 0..100) { // Assuming a max range of 100 blocks
-            val stepPos = currentPos.add(direction.multiply(1.0)) // Correctly step in the direction
+            val stepPos = currentPos.add(direction.multiply(1.0)) // Step in the provided direction
             val blockPos = BlockPos(stepPos)
             if (!ctx.world.isAir(blockPos)) {
                 blockHitResult = blockPos
@@ -38,14 +31,19 @@ class OpBlockRaycastWithBacktrack : ConstMediaAction {
             }
             currentPos = stepPos
         }
-        return if (blockHitResult != null && ctx.isVecInRange(Vec3d.ofCenter(blockHitResult))) {
-            val blocks = mutableListOf<Iota>()
-            val hitCenter = Vec3d.ofCenter(blockHitResult)
 
-            for (i in 0 until backtrackDistance.toInt()) {
-                // Calculate position by moving backward along the direction vector
-                val backtrackVec = hitCenter.subtract(direction.multiply(i.toDouble())) // Move along the correct direction
-                val blockPos = BlockPos(backtrackVec.x, backtrackVec.y, backtrackVec.z) // Convert to BlockPos
+        // Initialize the list of blocks starting with the hit block
+        val blocks = mutableListOf<Iota>()
+
+        return if (blockHitResult != null && ctx.isVecInRange(Vec3d.ofCenter(blockHitResult))) {
+            // Add the first hit block to the list
+            blocks.add(Vec3Iota(Vec3d.ofCenter(blockHitResult)))
+            var forwardPos = Vec3d.ofCenter(blockHitResult)
+
+            for (i in 1..forwardDistance.toInt()) {
+                // Move forward along the direction
+                forwardPos = forwardPos.add(direction.multiply(1.0))
+                val blockPos = BlockPos(forwardPos.x, forwardPos.y, forwardPos.z)
                 if (ctx.isVecInRange(Vec3d.ofCenter(blockPos))) {
                     blocks.add(Vec3Iota(Vec3d.ofCenter(blockPos)))
                 }
@@ -54,6 +52,5 @@ class OpBlockRaycastWithBacktrack : ConstMediaAction {
         } else {
             listOf(NullIota())
         }
-
     }
 }

@@ -23,7 +23,6 @@ dependencies {
     modCompileOnly "at.petra-k.paucal:paucal-common-$minecraftVersion:$paucalVersion"
     modCompileOnly "at.petra-k.hexcasting:hexcasting-fabric-$minecraftVersion:$hexcastingVersion"
     modCompileOnly "vazkii.patchouli:Patchouli-xplat:$minecraftVersion-$patchouliVersion"
-    modCompileOnly files(downloadDependency("https://github.com/Talia-12/Hexal/releases/download/0.2.3/hexal-common-$minecraftVersion-$project.hexalVersion"+".jar"))
 }
 
 publishing {

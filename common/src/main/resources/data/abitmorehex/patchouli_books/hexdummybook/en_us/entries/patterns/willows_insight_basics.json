@@ -10,9 +10,29 @@
       "type": "hexcasting:pattern",
       "op_id": "abitmorehex:unveiledsights",
       "anchor": "abitmorehex:unveiledsights",
-      "input": "Vector, Vector, number",
-      "output": "List{Vector}",
+      "input": "Vector, Vector, Number",
+      "output": "List",
       "text": "Takes two Vector, first a position, second an direction and third a number gives you back an list of positions after the first block hit by an Raycast."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "abitmorehex:roundaboutcubic",
+      "anchor": "abitmorehex:roundaboutcubic",
+      "input": "Vector, Number",
+      "output": "List",
+      "text": "Takes one vector and one number. First a position of wich a cubic radius around it gets assumed, this radius is the size of the number. Returns the given list of Vectors."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "abitmorehex:compareblocks",
+      "anchor": "abitmorehex:compareblocks",
+      "input": "Vector, Vector",
+      "output": "Boolean/List",
+      "text": "Takes two vectors, both positions. It first checks if the blocks match or not, if they do and have no nbt, it return true, if they don't false. if the block matches, but nbt doesn't it returns a list of true false. if the blocks don't match, but the nbt does, it returns, false true."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "if the block matches, but nbt doesn't it returns a list of true false. if the blocks don't match, but the nbt does, it returns, false true."
     }
   ]
 }

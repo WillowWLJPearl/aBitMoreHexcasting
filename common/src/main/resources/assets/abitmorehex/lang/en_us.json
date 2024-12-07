@@ -1,17 +1,19 @@
 {
-  "item.abitmorehex.dummy_item": "Dummy Item",
+  "item.abitmorehex.test_item": "Test Item",
   "block.abitmorehex.edified_sign": "Edified Sign",
   "hexcasting.spell.abitmorehex:congrats": "Congrats",
   "hexcasting.spell.abitmorehex:signum": "Crowd Diversion",
-  "hexcasting.spell.book.abitmorehex:congrats": "Dum. Spell Actn.",
+  "hexcasting.spell.book.abitmorehex:creeperhiss": "Priming sounds",
   "hexcasting.spell.book.abitmorehex:thoughtclear": "Thought Clear",
   "hexcasting.spell.book.abitmorehex:thoughtclutter": "Thought Clutter",
   "hexcasting.spell.book.abitmorehex:unveiledsights": "Unveiled Sights",
-  "abitmorehex.entry.dummy_spells": "Dummy Spells",
+  "hexcasting.spell.book.abitmorehex:randomizelist": "Spirael's Spiral",
+  "hexcasting.spell.book.abitmorehex:roundaboutcubic": "Cubic Guestimations",
+  "hexcasting.spell.book.abitmorehex:compareblocks": "Hexcheck",
+  "abitmorehex.entry.viraels_spells": "§pVirael's Spells",
   "abitmorehex.entry.spirael_list": "§pSpirael's List Manipulation",
   "abitmorehex.entry.willow_insights": "§pWillow's Insights",
-  "abitmorehex.page.dummy_spells.congrats": "Accepts a player entity, tells them they are doing a good job.",
-  "abitmorehex.page.dummy_actions.signum": "Accepts a number, returns -1 if it is negative, 0 if 0, 1 if positive.",
-  "text.abitmorehex.congrats": "Good job, %1$s!",
-  "text.abitmorehex.congrats.player": "a Player"
+  "abitmorehex.page.viraels_spells.creeperhiss": "Accepts a number and makes a priming sound. Fun to scare friends that use your spells.",
+  "text.abitmorehex.creeperhiss": "Good job, %1$s!",
+  "itemGroup.abitmorehex.abitmorehexing_group": "aBit More Hexes"
 }
