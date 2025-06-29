@@ -1,2 +1,2 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# avoid spurious diffs since datagen creates LF files
+generated/** text=auto eol=lf

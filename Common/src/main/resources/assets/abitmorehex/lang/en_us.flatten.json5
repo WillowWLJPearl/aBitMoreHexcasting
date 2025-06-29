@@ -1,0 +1,20 @@
+{
+  "item.abitmorehex.test_item": "Test Item",
+  "block.abitmorehex.edified_sign": "Edified Sign",
+  "hexcasting.action.abitmorehex:congrats": "Congrats",
+  "hexcasting.action.abitmorehex:signum": "Crowd Diversion",
+  "hexcasting.action.book.abitmorehex:creeperhiss": "Priming sounds",
+  "hexcasting.action.book.abitmorehex:thoughtclear": "Thought Clear",
+  "hexcasting.action.book.abitmorehex:thoughtclutter": "Thought Clutter",
+  "hexcasting.action.book.abitmorehex:unveiledsights": "Unveiled Sights",
+  "hexcasting.action.book.abitmorehex:randomizelist": "Spirael's Spiral",
+  "hexcasting.action.book.abitmorehex:roundaboutcubic": "Cubic Guestimations",
+  "hexcasting.action.book.abitmorehex:compareblocks": "Hexcheck",
+  "abitmorehex.entry.viraels_spells": "§pVirael's Spells",
+  "abitmorehex.entry.spirael_list": "§pSpirael's List Manipulation",
+  "abitmorehex.entry.willow_insights": "§pWillow's Insights",
+  "abitmorehex.page.viraels_spells.creeperhiss": "Accepts a number and makes a priming sound. Fun to scare friends that use your spells.",
+  "text.abitmorehex.creeperhiss": "Good job, %1$s!",
+  "itemGroup.abitmorehex.abitmorehexing_group": "aBit More Hexes",
+  "abitmorehex.book.patterns.spells.willows_spells.willowsnurturingwhispers": "Growth"
+}

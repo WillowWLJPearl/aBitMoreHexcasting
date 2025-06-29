@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "abitmorehex",
+  "version": "${version}",
+  "name": "ABitMoreHex: Recasted",
+  "description": "ABitMoreHex: Recasted addon for Hex Casting",
+  "authors": [
+    "aBit"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": "https://github.com/topanimator2/aBitMoreHexRecasted"
+  },
+  "license": "MIT",
+  "icon": "assets/abitmorehex/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [{
+      "adapter": "kotlin",
+      "value": "net.abit.abitmorehex.fabric.FabricAbitmorehex"
+    }],
+    "client": [{
+      "adapter": "kotlin",
+      "value": "net.abit.abitmorehex.fabric.FabricAbitmorehexClient"
+    }],
+    "modmenu": [{
+      "adapter": "kotlin",
+      "value": "net.abit.abitmorehex.fabric.FabricAbitmorehexModMenu"
+    }]
+  },
+  "mixins": [
+    "abitmorehex-common.mixins.json",
+    "abitmorehex-fabric.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "${versions.minecraft}",
+    "fabricloader": ">=${versions.fabric_loader}",
+    "fabric-api": ">=${versions.fabric_api}",
+    "fabric-language-kotlin": ">=${versions.kotlin_fabric}",
+    "architectury": ">=${versions.architectury}",
+    "hexcasting": ">=${versions.hexcasting_dependency}",
+    "cloth-config": ">=${versions.clothConfig}"
+  },
+  "suggests": {
+    "modmenu": ">=${versions.modMenu}"
+  }
+}

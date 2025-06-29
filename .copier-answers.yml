@@ -1,0 +1,20 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+# https://copier.readthedocs.io/en/stable/updating/#never-change-the-answers-file-manually
+_commit: v2.0.4
+_src_path: gh:FallingColors/hexdummy
+advanced: true
+capitalize_platforms: true
+classname: Abitmorehex
+default_branch: main
+description: 'ABitMoreHex: Recasted addon for Hex Casting'
+display_name: 'ABitMoreHex: Recasted'
+github_repo: aBitMoreHexRecasted
+github_user: aBit
+homepage_url: ''
+java_package: net.abit.abitmorehex
+kotlin_package: net.abit.abitmorehex
+mappings_name: Mojmap
+minecraft_version_in_mod_version: true
+mod_version: 0.1.0
+modid: abitmorehex
+sources_url: https://github.com/topanimator2/aBitMoreHexRecasted
