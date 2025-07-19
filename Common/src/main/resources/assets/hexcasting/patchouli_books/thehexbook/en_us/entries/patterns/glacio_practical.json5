@@ -1,0 +1,24 @@
+{
+  name: "abitmorehex.book.patterns.spells.glacio_practical",
+  category: "hexcasting:patterns",
+  icon: "minecraft:snowball",
+  advancement: "hexcasting:root",
+  pages: [
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:whiletrueloop",
+      anchor: "abitmorehex:whiletrueloop",
+      input: "[pattern]",
+      output: "",
+      text: "abitmorehex.book.patterns.spells.willows_spells.whiletrueloop"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:emptydict",
+      anchor: "abitmorehex:emptydict",
+      input: "",
+      output: "dict[]",
+      text: "abitmorehex.book.patterns.spells.willows_spells.emptydict"
+    }
+  ],
+}

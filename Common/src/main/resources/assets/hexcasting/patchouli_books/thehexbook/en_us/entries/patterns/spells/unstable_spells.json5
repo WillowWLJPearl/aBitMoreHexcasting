@@ -1,0 +1,16 @@
+{
+  name: "abitmorehex.book.patterns.spells.unstable",
+  category: "hexcasting:patterns",
+  icon: "minecraft:snowball/spells",
+  advancement: "hexcasting:root",
+  pages: [
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:minorteleport",
+      anchor: "abitmorehex:minorteleport",
+      input: "entity, vec3, (num)",
+      output: "",
+      text: "abitmorehex.book.patterns.spells.willows_spells.minorteleport"
+    }
+  ],
+}

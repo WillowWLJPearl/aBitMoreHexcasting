@@ -4,8 +4,12 @@
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "client": [
+    "MixinGuiSpellcasting"
   ],
   "mixins": [
+    "MixinBlockEntity",
+    "MixinResolvedPatternTypeGetters",
+    "TypeAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

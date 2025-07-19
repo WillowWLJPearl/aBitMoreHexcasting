@@ -1,0 +1,26 @@
+{
+  "name": "abitmorehex.entry.infusion_altar",
+  "category": "hexcasting:collection_of_casters/infusion_altar",
+  "icon": "minecraft:diamond",
+  "sortnum": 0,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "abitmorehex:altarpos",
+      "anchor": "abitmorehex:altarpos",
+      "input": "",
+      "output": "vec3",
+      "text": "Remove a vec3 and a item entity, then it will charge the infusion altar by the media amount stored within the item entity."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "abitmorehex:infusioncrafting",
+      "anchor": "abitmorehex:infusioncrafting",
+      "input": "[entity]",
+      "output": "",
+      "text": "Remove a list of entities, then it will try to infuse them onto the main item"
+    }
+  ]
+}

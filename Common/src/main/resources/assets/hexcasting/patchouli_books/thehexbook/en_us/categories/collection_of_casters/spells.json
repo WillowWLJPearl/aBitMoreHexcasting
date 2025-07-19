@@ -1,0 +1,7 @@
+{
+  "name": "abitmorehex.category.spells",
+  "icon": "minecraft:textures/item/enchanted_book.png",
+  "description": "abitmorehex.category.spells.desc",
+  "parent": "hexcasting:collection_of_casters",
+  "sortnum": 0
+}

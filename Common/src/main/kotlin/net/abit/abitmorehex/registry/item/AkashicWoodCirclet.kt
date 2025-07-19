@@ -11,6 +11,7 @@ import at.petrak.hexcasting.api.utils.*
 import at.petrak.hexcasting.api.utils.MathUtils.clamp
 import at.petrak.hexcasting.common.items.magic.ItemMediaHolder
 import at.petrak.hexcasting.common.items.storage.ItemFocus
+import net.abit.abitmorehex.registry.AbitmoreItems
 import net.abit.abitmorehex.registry.eval.CircletCastingEnvironment
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.nbt.ListTag
@@ -20,6 +21,7 @@ import net.minecraft.network.chat.TextColor
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.Entity
+import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.ArmorItem
 import net.minecraft.world.item.ArmorMaterial
@@ -64,7 +66,7 @@ class AkashicWoodCirclet(material: ArmorMaterial, type: Type, properties: Proper
         return mediaBarColor(media, maxMedia)
     }
     override fun canProvideMedia(stack: ItemStack?): Boolean {
-        return true
+        return false
     }
 
     override fun canRecharge(stack: ItemStack?): Boolean {
@@ -148,6 +150,8 @@ class AkashicWoodCirclet(material: ArmorMaterial, type: Type, properties: Proper
     override fun inventoryTick(stack: ItemStack, level: Level, entity: Entity, slotId: Int, isSelected: Boolean) {
         super.inventoryTick(stack, level, entity, slotId, isSelected)
         if (!level.isClientSide && entity is LivingEntity) {
+            val headStack = entity.getItemBySlot(EquipmentSlot.HEAD)
+            if (headStack !== stack) return
             setMaxMedia(stack, getMaxMedia(stack)+1)
             val living = entity as LivingEntity
             val tag    = stack.orCreateTag
@@ -181,26 +185,48 @@ class AkashicWoodCirclet(material: ArmorMaterial, type: Type, properties: Proper
         }
 
     }
-    fun readIotaList(stack: ItemStack, world: ServerLevel): List<Iota> {
-        // 1) Grab the root tag
-        val root = stack.tag ?: return emptyList()
+}
+public      fun readIotaList(stack: ItemStack, world: ServerLevel): List<Iota> {
+    // 1) Grab the root tag
+    val root = stack.tag ?: return emptyList()
 
-        // 2) Pull out the "data" compound
-        if (!root.contains("data", /*TAG_Compound=*/10)) return emptyList()
-        val dataTag = root.getCompound("data")
+    // 2) Pull out the "data" compound
+    if (!root.contains("data", /*TAG_Compound=*/10)) return emptyList()
+    val dataTag = root.getCompound("data")
 
-        // 3) Make sure it's actually a list‐iota
-        if (dataTag.getString("hexcasting:type") != "hexcasting:list") return emptyList()
+    // 3) Make sure it's actually a list‐iota
+    if (dataTag.getString("hexcasting:type") != "hexcasting:list") return emptyList()
 
-        // 4) Grab the raw ListTag under "hexcasting:data"
-        val rawList = dataTag.getList("hexcasting:data", /*TAG_Compound=*/10) as? ListTag
-            ?: return emptyList()
+    // 4) Grab the raw ListTag under "hexcasting:data"
+    val rawList = dataTag.getList("hexcasting:data", /*TAG_Compound=*/10) as? ListTag
+        ?: return emptyList()
 
-        // 5) Deserialize each element
-        return rawList.mapNotNull { element ->
-            // element should be a CompoundTag
-            val eltTag = element as? CompoundTag ?: return@mapNotNull null
-            IotaType.deserialize(eltTag, world)
-        }
+    // 5) Deserialize each element
+    return rawList.mapNotNull { element ->
+        // element should be a CompoundTag
+        val eltTag = element as? CompoundTag ?: return@mapNotNull null
+        IotaType.deserialize(eltTag, world)
+    }
+}
+public      fun readSubIotaList(stack: ItemStack, world: ServerLevel): List<Iota> {
+    // 1) Grab the root tag
+    val root = stack.tag ?: return emptyList()
+
+    // 2) Pull out the "data" compound
+    if (!root.contains("bdata", /*TAG_Compound=*/10)) return emptyList()
+    val dataTag = root.getCompound("bdata")
+
+    // 3) Make sure it's actually a list‐iota
+    if (dataTag.getString("hexcasting:type") != "hexcasting:list") return emptyList()
+
+    // 4) Grab the raw ListTag under "hexcasting:data"
+    val rawList = dataTag.getList("hexcasting:data", /*TAG_Compound=*/10) as? ListTag
+        ?: return emptyList()
+
+    // 5) Deserialize each element
+    return rawList.mapNotNull { element ->
+        // element should be a CompoundTag
+        val eltTag = element as? CompoundTag ?: return@mapNotNull null
+        IotaType.deserialize(eltTag, world)
     }
 }
