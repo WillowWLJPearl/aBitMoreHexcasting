@@ -8,11 +8,11 @@
   "pages": [
     {
       "type": "hexcasting:pattern",
-      "op_id": "abitmorehex:altarpos",
-      "anchor": "abitmorehex:altarpos",
+      "op_id": "abitmorehex:containerpos",
+      "anchor": "abitmorehex:containerpos",
       "input": "",
       "output": "vec3",
-      "text": "Remove a vec3 and a item entity, then it will charge the infusion altar by the media amount stored within the item entity."
+      "text": ""
     },
     {
       "type": "hexcasting:pattern",
