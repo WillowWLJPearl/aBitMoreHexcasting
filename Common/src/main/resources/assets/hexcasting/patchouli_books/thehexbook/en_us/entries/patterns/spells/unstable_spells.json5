@@ -1,7 +1,7 @@
 {
   name: "abitmorehex.book.patterns.spells.unstable",
-  category: "hexcasting:patterns",
-  icon: "minecraft:snowball/spells",
+  category: "hexcasting:patterns/spells",
+  icon: "minecraft:snowball",
   advancement: "hexcasting:root",
   pages: [
     {

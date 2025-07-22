@@ -6,8 +6,10 @@ import at.petrak.hexcasting.api.casting.castables.SpellAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadOffhandItem
+import at.petrak.hexcasting.api.casting.mishaps.MishapOthersName
 import net.abit.abitmorehex.api.ADSubIotaHolder
 import net.abit.abitmorehex.api.SubIotaHolderItem
+import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.item.ItemStack
 
@@ -46,6 +48,14 @@ object OpWriteSub : SpellAction {
         if (!holder.canWritesub(handStack, iota))
             throw MishapBadOffhandItem.of(handStack, "iota.readonly", iota.display())
 
+
+        // 6) Check for “Other’s Name” mishap
+        val trueName = MishapOthersName.getTrueNameFromDatum(
+            iota, env.castingEntity as? ServerPlayer
+        )
+        if (trueName != null) {
+            throw MishapOthersName(trueName)
+        }
         // 5. Schedule the actual write
         return SpellAction.Result(
             Spell(iota, handStack, holder),

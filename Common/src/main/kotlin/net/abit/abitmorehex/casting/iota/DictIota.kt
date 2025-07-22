@@ -25,6 +25,8 @@ class DictIota(
         }
     }
 
+    fun asMap(): Map<Iota,Iota> = this.map
+
     override fun size(): Int = map.values.sumOf { it.size() } + 1
 
     override fun depth(): Int = (map.values.maxOfOrNull { it.depth() } ?: 0) + 1

@@ -8,9 +8,7 @@ import at.petrak.hexcasting.common.lib.HexRegistries
 import at.petrak.hexcasting.common.lib.hex.HexActions
 import net.abit.abitmorehex.casting.actions.altars.OpContainerPos
 import net.abit.abitmorehex.casting.actions.altars.OpInfusionCrafting
-import net.abit.abitmorehex.casting.actions.dicts.OpEmptyDict
-import net.abit.abitmorehex.casting.actions.dicts.OpGetIndex
-import net.abit.abitmorehex.casting.actions.dicts.OpIndex
+import net.abit.abitmorehex.casting.actions.dicts.*
 import net.abit.abitmorehex.casting.actions.eval.OpWhileTrue
 import net.abit.abitmorehex.casting.actions.math.OpRemoveEveryNth
 import net.abit.abitmorehex.casting.actions.math.OpRandomizeList
@@ -29,8 +27,11 @@ object AbitmorehexActions : AbitmorehexRegistrar<ActionRegistryEntry>(
 ) {
 
     val EMPTYDICT = make("emptydict", HexDir.NORTH_EAST, "qaqdweeew", OpEmptyDict)
-    val INDEXDICT = make("indexdict", HexDir.EAST, "dawqqqwaqw", OpIndex)
+    val INDEXDICT = make("indexdict", HexDir.EAST, "dawqqqwaqw", OpDictIndex)
+    val APPENDDICT = make("appendidct", HexDir.EAST, "wdedqde", OpDictAppend)
+    val ADDDDICT = make("adddidct", HexDir.EAST, "qwaawq", OpDictAppendDict)
     val GETINDEXDICT = make("getindexdict", HexDir.WEST, "eqwaeawqaw", OpGetIndex)
+    val GETKEYS = make("getkeys", HexDir.EAST, "waqwaeawqe", OpGetKeys)
 
     val THOUGHTCLEAR = make("thoughtclear", HexDir.NORTH_WEST, "adadadeaqqq", OpRemoveEveryNth)
     val THOUGHTCLUTTER = make("thoughtclutter", HexDir.NORTH_EAST, "dadadawedqdew", OpReplaceEveryNth)
@@ -68,6 +69,8 @@ object AbitmorehexActions : AbitmorehexRegistrar<ActionRegistryEntry>(
 
     val MEDIAFYITEM = make("mediafyitem", HexDir.WEST, "waaqaeq", OpMediafyItem)
     val WEAVEITEM = make("weaveitem", HexDir.WEST, "wddedqe", OpWeaveItem)
+
+    val THROWITEM = make("throwitem", HexDir.NORTH_EAST, "waaqqaaw", OpThrowItem)
 
     val GRASPINGVINES = make("evokegraspingvines", HexDir.NORTH_WEST, "qqqqqawqadawada", OpEvokeGraspingVines)
     val LEECHINGVINES = make("evokeleechingvines", HexDir.NORTH_WEST, "qqwaeaeaqwaqq", OpEvokeLeechingVines)
