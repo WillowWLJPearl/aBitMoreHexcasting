@@ -1,37 +1,47 @@
 package net.abitmorehex.casting.patterns.spells
 
+import at.petrak.hexcasting.api.casting.ParticleSpray
+import at.petrak.hexcasting.api.casting.RenderedSpell
+import at.petrak.hexcasting.api.casting.castables.SpellAction
+import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
+import at.petrak.hexcasting.api.casting.iota.DoubleIota
+import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.misc.MediaConstants
-import at.petrak.hexcasting.api.spell.ParticleSpray
-import at.petrak.hexcasting.api.spell.RenderedSpell
-import at.petrak.hexcasting.api.spell.SpellAction
-import at.petrak.hexcasting.api.spell.casting.CastingContext
-import at.petrak.hexcasting.api.spell.iota.DoubleIota
-import at.petrak.hexcasting.api.spell.iota.Iota
 import net.minecraft.sound.SoundEvents
+import net.minecraft.util.math.Vec3d
 
 class OpCreeperFireworkSpell : SpellAction {
     override val argc = 1
-    val cost = 2 * MediaConstants.DUST_UNIT
+    // Make sure it's a Long for the cost in SpellAction.Result
+    private val cost: Long = 2L * MediaConstants.DUST_UNIT
 
-    override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
+    override fun execute(args: List<Iota>, ctx: CastingEnvironment): SpellAction.Result {
+        val entity = ctx.castingEntity
         val intensity = (args[0] as DoubleIota).double
+        // If entity.pos doesn't exist, create a Vec3d:
+        val position = entity?.let { Vec3d(it.x, entity.y, entity.z) }
 
-        return Triple(
+        // Return the triple (RenderedSpell, Long, List<ParticleSpray>)
+        return SpellAction.Result(
             Spell(intensity),
             cost,
-            listOf(ParticleSpray.burst(ctx.caster.pos, intensity))  // Firework particles with intensity
+            listOf(position?.let { ParticleSpray.burst(it, intensity) }) as List<ParticleSpray>
         )
     }
 
     private data class Spell(val intensity: Double) : RenderedSpell {
-        override fun cast(ctx: CastingContext) {
-            val world = ctx.caster.world
-            val pos = ctx.caster.pos
+        override fun cast(ctx: CastingEnvironment) {
+            val world = ctx.world
+            val entity = ctx.castingEntity ?: return
 
-            // Play the creeper hissing sound at the caster's location
-            world.playSound(null, pos.x, pos.y, pos.z, SoundEvents.ENTITY_CREEPER_PRIMED, ctx.caster.soundCategory, 1.0f, 1.0f)
-
-            // The particle effect is handled by returning ParticleSpray in the execute method.
+            world.playSound(
+                null,
+                entity.x, entity.y, entity.z,
+                SoundEvents.ENTITY_CREEPER_PRIMED,
+                entity.soundCategory,  // if soundCategory doesn't exist, do entity.getSoundCategory()
+                intensity.toFloat(),
+                1.0f
+            )
         }
     }
 }

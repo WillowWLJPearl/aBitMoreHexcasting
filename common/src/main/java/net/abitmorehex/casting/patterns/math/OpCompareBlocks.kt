@@ -1,8 +1,10 @@
 package net.abitmorehex.casting.patterns.math
 
-import at.petrak.hexcasting.api.spell.ConstMediaAction
-import at.petrak.hexcasting.api.spell.casting.CastingContext
-import at.petrak.hexcasting.api.spell.iota.*
+import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
+import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
+import at.petrak.hexcasting.api.casting.iota.BooleanIota
+import at.petrak.hexcasting.api.casting.iota.Iota
+import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.util.math.BlockPos
@@ -10,12 +12,12 @@ import net.minecraft.util.math.BlockPos
 class OpCompareBlocks : ConstMediaAction {
     override val argc = 2
 
-    override fun execute(args: List<Iota>, ctx: CastingContext): List<Iota> {
+    override fun execute(args: List<Iota>, ctx: CastingEnvironment): List<Iota> {
         val pos1 = (args[0] as Vec3Iota).vec3
         val pos2 = (args[1] as Vec3Iota).vec3
 
-        val blockPos1 = BlockPos(pos1.x, pos1.y, pos1.z)
-        val blockPos2 = BlockPos(pos2.x, pos2.y, pos2.z)
+        val blockPos1 = BlockPos(pos1.x.toInt(), pos1.y.toInt(), pos1.z.toInt())
+        val blockPos2 = BlockPos(pos2.x.toInt(), pos2.y.toInt(), pos2.z.toInt())
 
         val blockState1 = ctx.world.getBlockState(blockPos1)
         val blockState2 = ctx.world.getBlockState(blockPos2)

@@ -1,16 +1,16 @@
 package net.abitmorehex.casting.patterns.math
 
-import at.petrak.hexcasting.api.spell.ConstMediaAction
-import at.petrak.hexcasting.api.spell.asActionResult
-import at.petrak.hexcasting.api.spell.casting.CastingContext
-import at.petrak.hexcasting.api.spell.getList
-import at.petrak.hexcasting.api.spell.getPositiveIntUnderInclusive
-import at.petrak.hexcasting.api.spell.iota.Iota
+import at.petrak.hexcasting.api.casting.asActionResult
+import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
+import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
+import at.petrak.hexcasting.api.casting.getList
+import at.petrak.hexcasting.api.casting.getPositiveIntUnderInclusive
+import at.petrak.hexcasting.api.casting.iota.Iota
 
 class OpRemoveEveryNth : ConstMediaAction {
     override val argc = 2
 
-    override fun execute(args: List<Iota>, ctx: CastingContext): List<Iota> {
+    override fun execute(args: List<Iota>, ctx: CastingEnvironment): List<Iota> {
         val list = args.getList(0, argc)
         val n = args.getPositiveIntUnderInclusive(1, list.size(), argc)
 

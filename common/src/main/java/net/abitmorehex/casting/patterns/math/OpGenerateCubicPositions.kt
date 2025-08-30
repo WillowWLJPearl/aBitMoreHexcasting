@@ -1,14 +1,17 @@
 package net.abitmorehex.casting.patterns.math
 
-import at.petrak.hexcasting.api.spell.ConstMediaAction
-import at.petrak.hexcasting.api.spell.casting.CastingContext
-import at.petrak.hexcasting.api.spell.iota.*
+import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
+import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
+import at.petrak.hexcasting.api.casting.iota.DoubleIota
+import at.petrak.hexcasting.api.casting.iota.Iota
+import at.petrak.hexcasting.api.casting.iota.ListIota
+import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import net.minecraft.util.math.Vec3d
 
 class OpGenerateCubicPositions : ConstMediaAction {
         override val argc = 2
 
-        override fun execute(args: List<Iota>, ctx: CastingContext): List<Iota> {
+        override fun execute(args: List<Iota>, ctx: CastingEnvironment): List<Iota> {
                 val origin = (args[0] as Vec3Iota).vec3
                 val radius = (args[1] as DoubleIota).double.toInt()
 

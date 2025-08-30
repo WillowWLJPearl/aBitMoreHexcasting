@@ -1,17 +1,15 @@
 package net.abitmorehex.casting.patterns.math
 
-import at.petrak.hexcasting.api.misc.MediaConstants
-import at.petrak.hexcasting.api.spell.ConstMediaAction
-import at.petrak.hexcasting.api.spell.casting.CastingContext
-import at.petrak.hexcasting.api.spell.iota.*
+import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
+import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
+import at.petrak.hexcasting.api.casting.iota.*
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Vec3d
 
-class OpBlockRaycastWithBacktrack : ConstMediaAction {
+class OpBlockRaycastContinue : ConstMediaAction {
     override val argc = 3
-    override val mediaCost = MediaConstants.DUST_UNIT / 100
 
-    override fun execute(args: List<Iota>, ctx: CastingContext): List<Iota> {
+    override fun execute(args: List<Iota>, ctx: CastingEnvironment): List<Iota> {
         val origin = (args[0] as Vec3Iota).vec3
         val direction = (args[1] as Vec3Iota).vec3.normalize() // Use look as the direction
         val forwardDistance = (args[2] as DoubleIota).double
@@ -24,7 +22,7 @@ class OpBlockRaycastWithBacktrack : ConstMediaAction {
         // Manual raycast by stepping along the vector
         for (i in 0..100) { // Assuming a max range of 100 blocks
             val stepPos = currentPos.add(direction.multiply(1.0)) // Step in the provided direction
-            val blockPos = BlockPos(stepPos)
+            val blockPos = BlockPos(stepPos.x.toInt(), stepPos.y.toInt(), stepPos.z.toInt()) // Convert Vec3d to BlockPos
             if (!ctx.world.isAir(blockPos)) {
                 blockHitResult = blockPos
                 break
@@ -43,7 +41,7 @@ class OpBlockRaycastWithBacktrack : ConstMediaAction {
             for (i in 1..forwardDistance.toInt()) {
                 // Move forward along the direction
                 forwardPos = forwardPos.add(direction.multiply(1.0))
-                val blockPos = BlockPos(forwardPos.x, forwardPos.y, forwardPos.z)
+                val blockPos = BlockPos(forwardPos.x.toInt(), forwardPos.y.toInt(), forwardPos.z.toInt())
                 if (ctx.isVecInRange(Vec3d.ofCenter(blockPos))) {
                     blocks.add(Vec3Iota(Vec3d.ofCenter(blockPos)))
                 }

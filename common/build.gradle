@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.8.0'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.10'
 }
 archivesBaseName = getArtifactId("common")
 
@@ -20,7 +20,10 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2' // for @Nonnull
 
-    modCompileOnly "at.petra-k.paucal:paucal-common-$minecraftVersion:$paucalVersion"
+
+    //compileOnly "com.samsthenerd.inline:inline-forge:$minecraftVersion-$inlineVersion"
+
+    modCompileOnly "at.petra-k.paucal:paucal-fabric-$minecraftVersion:$paucalVersion"
     modCompileOnly "at.petra-k.hexcasting:hexcasting-fabric-$minecraftVersion:$hexcastingVersion"
     modCompileOnly "vazkii.patchouli:Patchouli-xplat:$minecraftVersion-$patchouliVersion"
 }
@@ -41,6 +44,7 @@ publishing {
 
 repositories {
     mavenCentral()
+    maven { url = "https://mvn.devos.one/snapshots/" }
 }
 
 
@@ -52,4 +56,3 @@ def downloadDependency(url) {
     }
     return file
 }
-
