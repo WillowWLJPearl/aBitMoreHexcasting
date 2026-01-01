@@ -7,8 +7,7 @@ import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadCaster
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadItem
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadOffhandItem
-import at.petrak.hexcasting.api.casting.mishaps.MishapDisallowedSpell
-import net.abit.abitmorehex.api.SubIotaHolderItem
+import net.abit.abitmorehex.misc.SubIotaHolderItem
 import net.abit.abitmorehex.registry.eval.SubCastingEnvironment
 import net.minecraft.network.chat.Component
 import net.minecraft.world.entity.item.ItemEntity

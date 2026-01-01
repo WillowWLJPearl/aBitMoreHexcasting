@@ -1,14 +1,12 @@
 package net.abit.abitmorehex.casting.actions.rw
 
-import at.petrak.hexcasting.api.addldata.ADIotaHolder
 import at.petrak.hexcasting.api.casting.RenderedSpell
 import at.petrak.hexcasting.api.casting.castables.SpellAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadOffhandItem
 import at.petrak.hexcasting.api.casting.mishaps.MishapOthersName
-import net.abit.abitmorehex.api.ADSubIotaHolder
-import net.abit.abitmorehex.api.SubIotaHolderItem
+import net.abit.abitmorehex.misc.SubIotaHolderItem
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.item.ItemStack

@@ -7,7 +7,6 @@
     "MixinGuiSpellcasting"
   ],
   "mixins": [
-    "MixinBlockEntity",
     "MixinResolvedPatternTypeGetters",
     "TypeAccessor"
   ],

@@ -7,7 +7,7 @@ import at.petrak.hexcasting.api.utils.getCompound
 import at.petrak.hexcasting.api.utils.putTag
 import at.petrak.hexcasting.api.utils.underline
 import at.petrak.hexcasting.common.items.storage.ItemFocus
-import net.abit.abitmorehex.api.SubIotaHolderItem
+import net.abit.abitmorehex.misc.SubIotaHolderItem
 import net.minecraft.ChatFormatting
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component

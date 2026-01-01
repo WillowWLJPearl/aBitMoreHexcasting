@@ -52,6 +52,8 @@ abitmorehexModDependencies {
     requires(curseforge = "hexcasting", modrinth = "hex-casting")
     requires("kotlin-for-forge")
 }
+val rei_version: String by project
+val emi_version: String by project
 
 dependencies {
     forge(libs.forge)
@@ -68,6 +70,9 @@ dependencies {
     modLocalRuntime(libs.caelus)
     modLocalRuntime(libs.inline.forge) { isTransitive = false }
 
+    modApi("dev.emi:emi-forge:${emi_version}")
+    modCompileOnly("me.shedaniel:RoughlyEnoughItems-forge:${rei_version}")
+
     modApi(libs.clothConfig.forge)
 
     libs.mixinExtras.common.also {
@@ -80,7 +85,9 @@ dependencies {
         include(it)
     }
 }
-
+tasks.jar {
+    from(sourceSets.main.get().resources) // ensure JSON + refmap are packed
+}
 tasks {
     shadowJar {
         exclude("fabric.mod.json")

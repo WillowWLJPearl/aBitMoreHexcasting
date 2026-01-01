@@ -1,7 +1,7 @@
 {
-  "name": "abitmorehex.category.spells",
+  "name": "abitmorehex.category.infusion_spells",
   "icon": "minecraft:textures/item/pink_candle.png",
-  "description": "abitmorehex.category.spells.desc",
+  "description": "abitmorehex.category.infusion_spells.desc",
   "parent": "hexcasting:collection_of_casters",
   "sortnum": 1
 }

@@ -11,6 +11,8 @@ import at.petrak.hexcasting.common.items.storage.ItemFocus
 import at.petrak.hexcasting.common.lib.HexAttributes
 import com.google.common.collect.HashMultimap
 import com.google.common.collect.Multimap
+import com.mojang.authlib.minecraft.client.MinecraftClient
+import net.minecraft.client.Minecraft
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
 import net.minecraft.world.entity.EquipmentSlot

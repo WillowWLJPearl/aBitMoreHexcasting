@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "O O",
+    "SQS",
+    "KBK"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stone_slab"
+    },
+    "K": {
+      "item": "minecraft:stone"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "Q": {
+      "item": "hexcasting:quenched_allay_shard"
+    },
+    "B": {
+      "item": "minecraft:stone_brick_slab"
+    }
+  },
+  "result": {
+    "item": "abitmorehex:rooted_table_item"
+  }
+}

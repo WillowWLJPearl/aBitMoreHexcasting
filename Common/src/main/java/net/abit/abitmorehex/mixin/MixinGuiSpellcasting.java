@@ -3,6 +3,7 @@ package net.abit.abitmorehex.mixin;
 import at.petrak.hexcasting.api.casting.eval.ExecutionClientView;
 import at.petrak.hexcasting.api.casting.eval.ResolvedPatternType;
 import at.petrak.hexcasting.client.gui.GuiSpellcasting;
+import dev.architectury.platform.Platform;
 import net.abit.abitmorehex.AbitmorehexClient;
 import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,14 +21,16 @@ public class MixinGuiSpellcasting {
             )
     )
     private ResolvedPatternType redirectGetResolutionType(ExecutionClientView info) {
+        if (!Platform.isForge()) return info.getResolutionType();
+
         var mc = Minecraft.getInstance();
-        // if there's no player yet, just return whatever the server sent
-        if (mc.player == null) {
+        if (mc.player == null) return info.getResolutionType();
+
+        try {
+            return AbitmorehexClient.INSTANCE.getTypeFor(info.getResolutionType());
+        } catch (Throwable t) {
             return info.getResolutionType();
         }
-        // call your no‑arg method on the Kotlin singleton
-        ResolvedPatternType custom = AbitmorehexClient.INSTANCE.getTypeFor();
-        // guard in case it ever returns null (shouldn't, but safety first)
-        return (custom != null) ? custom : info.getResolutionType();
     }
+
 }

@@ -1,7 +1,7 @@
 {
   "type": "abitmorehex:infusion",
   "base":       { "item": "hexcasting:focus" },
-  "ingredients":[ { "item": "minecraft:gold_nugget" } ],
+  "ingredients":[ { "item": "minecraft:gold_nugget" } , { "item": "minecraft:iron_nugget" }],
   "extras":     [ { "item": "minecraft:glowstone_dust" } ],
   "output":     { "item": "abitmorehex:akashic_wood_circlet", "count": 1 },
   "extraAttributes": {

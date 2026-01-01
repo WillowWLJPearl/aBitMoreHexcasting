@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": { "layer0": "abitmorehex:item/ancient_parchment" },
+  "overrides": [
+    { "predicate": { "abitmorehex:has_data": 1 }, "model": "abitmorehex:item/ancient_parchment_filled" }
+  ]
+}

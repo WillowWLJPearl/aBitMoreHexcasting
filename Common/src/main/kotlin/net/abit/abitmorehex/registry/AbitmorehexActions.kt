@@ -28,8 +28,8 @@ object AbitmorehexActions : AbitmorehexRegistrar<ActionRegistryEntry>(
 
     val EMPTYDICT = make("emptydict", HexDir.NORTH_EAST, "qaqdweeew", OpEmptyDict)
     val INDEXDICT = make("indexdict", HexDir.EAST, "dawqqqwaqw", OpDictIndex)
-    val APPENDDICT = make("appendidct", HexDir.EAST, "wdedqde", OpDictAppend)
-    val ADDDDICT = make("adddidct", HexDir.EAST, "qwaawq", OpDictAppendDict)
+    val APPENDDICT = make("appenddict", HexDir.EAST, "wdedqde", OpDictAppend)
+    val ADDDDICT = make("adddict", HexDir.EAST, "qwaawq", OpDictAppendDict)
     val GETINDEXDICT = make("getindexdict", HexDir.WEST, "eqwaeawqaw", OpGetIndex)
     val GETKEYS = make("getkeys", HexDir.EAST, "waqwaeawqe", OpGetKeys)
 
@@ -60,7 +60,7 @@ object AbitmorehexActions : AbitmorehexRegistrar<ActionRegistryEntry>(
     val OPGETSLOT = make("getitemslot", HexDir.NORTH_EAST, "qaqqaea", OpGetCurrentSlot)
     val READCURRENTSUBIOTA = make("readcurrentsubiota", HexDir.EAST, "aqqwaqdqa", OpReadCurrentSub)
     val WRITECURRENTSUBIOTA = make("writecurrentsubiota", HexDir.WEST, "deewdeaed", OpWriteCurrentSub)
-    val CASITEMSPELL = make("castitemspell", HexDir.EAST, "deadaed", OpCastItemSpell)
+    val CASITEMSPELL = make("castitemspell", HexDir.SOUTH_EAST, "deadaed", OpCastItemSpell)
     val CASITEMWITHSPELL = make("castitemwithspell", HexDir.SOUTH_WEST, "aqdadqa", OpCastItemWithSpell)
 
     val CONTAINERPOS = make("containerpos", HexDir.SOUTH_WEST, "qadaqq", OpContainerPos)
@@ -71,11 +71,13 @@ object AbitmorehexActions : AbitmorehexRegistrar<ActionRegistryEntry>(
     val WEAVEITEM = make("weaveitem", HexDir.WEST, "wddedqe", OpWeaveItem)
 
     val THROWITEM = make("throwitem", HexDir.NORTH_EAST, "waaqqaaw", OpThrowItem)
+    val SWITCHITEM = make("switchitem", HexDir.SOUTH_WEST, "awqqqwaqe", OpSwitchSlots)
 
     val GRASPINGVINES = make("evokegraspingvines", HexDir.NORTH_WEST, "qqqqqawqadawada", OpEvokeGraspingVines)
     val LEECHINGVINES = make("evokeleechingvines", HexDir.NORTH_WEST, "qqwaeaeaqwaqq", OpEvokeLeechingVines)
 
     val MINORTELEPORT = make("minorteleport", HexDir.EAST, "waqqqqqeawqwqwaadqdqd", OpMinorTeleport)
+    val TRANSLOCATION = make("translocation", HexDir.EAST, "waqqqqqwwawwwawdeewewwewee", OpTranslocation)
 
     val ACTIVATEROOTS = make("activateroottable", HexDir.SOUTH_EAST, "qqadeqa", OpActivateAltar)
     val CHARGEALTAR = make("chargealtar", HexDir.WEST, "wawawqadawadawada", OpChargeAltar)

@@ -1,0 +1,9 @@
+{
+  "type": "abitmorehex:infusion",
+  "base":       { "item": "hexcasting:thought_knot" },
+  "ingredients":[ { "item": "minecraft:paper" }, { "item": "minecraft:paper" } , { "item": "minecraft:paper" }, { "item": "minecraft:leather" }, { "item": "minecraft:glowstone_dust" }],
+  "extras":     [ ],
+  "output":     { "item": "abitmorehex:stitched_scribbles", "count": 1 },
+  "extraAttributes": {
+  }
+}

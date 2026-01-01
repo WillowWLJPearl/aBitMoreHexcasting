@@ -1,0 +1,15 @@
+{
+  "type": "abitmorehex:infusion",
+  "base":       { "tag": "hexcasting:staves" },
+  "ingredients":[ { "item": "minecraft:light_blue_dye" } ,{ "item": "minecraft:light_blue_dye" },
+    { "item": "minecraft:light_blue_dye" },{ "item": "minecraft:black_dye" }, { "item": "minecraft:pink_dye" },
+    { "item": "minecraft:black_dye" },
+    {"item": "hexcasting:quenched_allay_shard"}],
+  "extras":     [ { "item": "hexcasting:lens" }],
+  "output":     { "item": "abitmorehex:staff/miku", "count": 1 },
+  "extraAttributes": {
+    "lens": {
+      "nbt": "{AttributeModifiers:[{AttributeName:\"hexcasting:grid_zoom\",Name:\"abitmorehex:gridzoom_staff\",Amount:0.1d,Operation:0,Slot:\"mainhand\"}]}"
+    }
+  }
+}

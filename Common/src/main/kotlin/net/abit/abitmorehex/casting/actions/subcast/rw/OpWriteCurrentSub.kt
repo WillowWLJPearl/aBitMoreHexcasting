@@ -1,19 +1,14 @@
 package net.abit.abitmorehex.casting.actions.subcast.rw
 
-import at.petrak.hexcasting.api.addldata.ADIotaHolder
 import at.petrak.hexcasting.api.casting.ParticleSpray
 import at.petrak.hexcasting.api.casting.RenderedSpell
-import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.castables.SpellAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
-import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadCaster
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadItem
-import at.petrak.hexcasting.api.casting.mishaps.MishapBadOffhandItem
-import at.petrak.hexcasting.api.casting.mishaps.MishapDisallowedSpell
 import at.petrak.hexcasting.api.mod.HexConfig
-import net.abit.abitmorehex.api.SubIotaHolderItem
+import net.abit.abitmorehex.misc.SubIotaHolderItem
 import net.abit.abitmorehex.registry.eval.SubCastingEnvironment
 import net.minecraft.network.chat.Component
 import net.minecraft.world.entity.item.ItemEntity

@@ -11,14 +11,11 @@ import at.petrak.hexcasting.api.casting.mishaps.MishapBadCaster
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadItem
 import at.petrak.hexcasting.api.item.IotaHolderItem
 import at.petrak.hexcasting.api.mod.HexConfig
-import net.abit.abitmorehex.api.SubIotaHolderItem
+import net.abit.abitmorehex.misc.SubIotaHolderItem
 import net.abit.abitmorehex.registry.eval.SubCastingEnvironment
-import net.abit.abitmorehex.registry.item.readIotaList
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerLevel
-import net.minecraft.world.entity.SlotAccess
 import net.minecraft.world.entity.item.ItemEntity
-import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.phys.Vec3
 
@@ -28,8 +25,8 @@ object OpCastItemWithSpell : SpellAction {
     override fun execute(args: List<Iota>, env: CastingEnvironment): SpellAction.Result {
         if (env !is SubCastingEnvironment)
             throw MishapBadCaster()
-        val spell = (args[0] as Iota)
-        val slot = (args[1] as DoubleIota).double
+        val spell = (args[1] as Iota)
+        val slot = (args[0] as DoubleIota).double
         val vec3 = env.getContainerVec3()
         val container = env.getContainer()
 

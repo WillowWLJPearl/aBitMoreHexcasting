@@ -1,10 +1,13 @@
 package net.abit.abitmorehex.blockentities
 
+import at.petrak.hexcasting.api.casting.iota.Iota
+import at.petrak.hexcasting.api.item.IotaHolderItem
 import net.abit.abitmorehex.registry.AbitmorehexBlockEntities.ROOTED_TABLE
 import net.minecraft.core.BlockPos
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket
+import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
@@ -73,7 +76,11 @@ open class RootedTable(
         primaryStack = stack.copy()
         markDirtyAndSync()
     }
-
+    fun getIota(): CompoundTag? {
+        val item = iotaStack.item
+        item as IotaHolderItem
+        return item.readIotaTag(iotaStack)
+    }
     fun getIotaSlot(): ItemStack = iotaStack.copy()
     fun setIotaSlot(stack: ItemStack) {
         iotaStack = stack.copy()
@@ -85,7 +92,7 @@ open class RootedTable(
         media = amount
         markDirtyAndSync()
     }
-    fun getMishap(): Long = media
+    fun getMishap(): Component = lastmishap
     fun setMishap(mishap: Component) {
         lastmishap = mishap
         markDirtyAndSync()

@@ -5,10 +5,8 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadOffhandItem
-import at.petrak.hexcasting.xplat.IXplatAbstractions
-import net.abit.abitmorehex.api.SubIotaHolderItem
+import net.abit.abitmorehex.misc.SubIotaHolderItem
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.item.ItemStack
 
 object OpReadSub : ConstMediaAction {
     override val argc = 0

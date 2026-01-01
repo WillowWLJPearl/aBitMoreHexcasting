@@ -10,15 +10,55 @@
       anchor: "abitmorehex:whiletrueloop",
       input: "[pattern]",
       output: "",
-      text: "abitmorehex.book.patterns.spells.willows_spells.whiletrueloop"
+      text: "abitmorehex.book.patterns.spells.glacio_practical.whiletrueloop"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:indexdict",
+      anchor: "abitmorehex:indexdict",
+      input: "any, any",
+      output: "dict",
+      text: "abitmorehex.book.patterns.spells.glacio_practical.indexdict"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:getindexdict",
+      anchor: "abitmorehex:getindexdict",
+      input: "dict, any",
+      output: "any",
+      text: "abitmorehex.book.patterns.spells.glacio_practical.getindexdict"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:appenddict",
+      anchor: "abitmorehex:appenddict",
+      input: "dict, any, any",
+      output: "dict",
+      text: "abitmorehex.book.patterns.spells.glacio_practical.appenddict"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:adddict",
+      anchor: "abitmorehex:adddict",
+      input: "dict, dict",
+      output: "dict",
+      text: "abitmorehex.book.patterns.spells.glacio_practical.adddict"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:getkeys",
+      anchor: "abitmorehex:getkeys",
+      input: "dict",
+      output: "list",
+      text: "abitmorehex.book.patterns.spells.glacio_practical.getkeys"
     },
     {
       type: "hexcasting:pattern",
       op_id: "abitmorehex:emptydict",
       anchor: "abitmorehex:emptydict",
       input: "",
-      output: "dict[]",
-      text: "abitmorehex.book.patterns.spells.willows_spells.emptydict"
+      output: "dict",
+      text: "abitmorehex.book.patterns.spells.glacio_practical.emptydict"
     }
   ],
 }

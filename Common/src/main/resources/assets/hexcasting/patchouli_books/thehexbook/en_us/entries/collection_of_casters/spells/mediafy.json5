@@ -1,0 +1,32 @@
+{
+  name: "abitmorehex.book.patterns.spells.mediafy",
+  category: "hexcasting:collection_of_casters/spells",
+  icon: "minecraft:amethyst_shard",
+  advancement: "hexcasting:root",
+  pages: [
+    {
+      "type": "patchouli:text",
+      "text": "abitmorehex.book.patterns.spells.mediafy.intro"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "abitmorehex.book.patterns.spells.mediafy.intro2"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:mediafyitem",
+      anchor: "abitmorehex:mediafyitem",
+      input: "entity",
+      output: "item",
+      text: "abitmorehex.book.patterns.spells.mediafy.mediafy"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:weaveitem",
+      anchor: "abitmorehex:weaveitem",
+      input: "vec3, item",
+      output: "",
+      text: "abitmorehex.book.patterns.spells.mediafy.weave"
+    }
+  ]
+}

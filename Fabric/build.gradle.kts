@@ -29,7 +29,9 @@ abitmorehexModDependencies {
     requires("fabric-language-kotlin")
     optional("modmenu")
 }
+val emi_version: String by project
 
+val rei_version: String by project
 dependencies {
     modApi(libs.fabric.api)
     modImplementation(libs.fabric.loader)
@@ -53,6 +55,11 @@ dependencies {
     modLocalRuntime(libs.serializationHooks)
     modLocalRuntime(libs.trinkets)
     modLocalRuntime(libs.inline.fabric) { isTransitive = false }
+
+
+
+    modCompileOnly("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}")
+    modApi("dev.emi:emi-fabric:${emi_version}")
 
     libs.mixinExtras.fabric.also {
         localRuntime(it)

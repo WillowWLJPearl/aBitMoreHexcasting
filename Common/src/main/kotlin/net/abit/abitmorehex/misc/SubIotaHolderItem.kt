@@ -1,8 +1,7 @@
-package net.abit.abitmorehex.api
+package net.abit.abitmorehex.misc
 
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
-import at.petrak.hexcasting.api.item.IotaHolderItem
 import at.petrak.hexcasting.api.utils.hasString
 import at.petrak.hexcasting.client.ClientTickCounter
 import at.petrak.hexcasting.common.lib.hex.HexIotaTypes

@@ -1,0 +1,52 @@
+{
+  name: "abitmorehex.book.patterns.itemcasting.eval",
+  category: "hexcasting:collection_of_casters/itemcasting",
+  icon: "abitmorehex:stitched_scribbles",
+  advancement: "hexcasting:root",
+  pages: [
+    {
+      "type": "patchouli:text",
+      "text": "abitmorehex.book.patterns.itemcasting.eval.intro"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:castitemspell",
+      anchor: "abitmorehex:castitemspell",
+      input: "num",
+      output: "",
+      text: "abitmorehex.book.patterns.itemcasting.eval.castitem"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:castitemwithspell",
+      anchor: "abitmorehex:castitemwithspell",
+      input: "num, list",
+      output: "",
+      text: "abitmorehex.book.patterns.itemcasting.eval.castitemwithspell"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:getitemslot",
+      anchor: "abitmorehex:getitemslot",
+      input: "",
+      output: "num",
+      text: "abitmorehex.book.patterns.itemcasting.eval.getitemslot"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:throwitem",
+      anchor: "abitmorehex:throwitem",
+      input: "num",
+      output: "",
+      text: "abitmorehex.book.patterns.itemcasting.eval.throwitem"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:switchitem",
+      anchor: "abitmorehex:switchitem",
+      input: "num, num",
+      output: "",
+      text: "abitmorehex.book.patterns.itemcasting.eval.switchitem"
+    }
+    ]
+}

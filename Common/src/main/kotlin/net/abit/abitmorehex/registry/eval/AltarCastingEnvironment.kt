@@ -44,7 +44,7 @@ class AltarCastingEnvironment(
     }
 
     override fun mishapSprayPos(): Vec3 {
-        return this.caster!!.position()
+        return vec3
     }
 
     override fun getCastingHand(): InteractionHand? = null

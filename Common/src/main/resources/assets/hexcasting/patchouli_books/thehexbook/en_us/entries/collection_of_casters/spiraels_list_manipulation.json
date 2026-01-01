@@ -12,7 +12,7 @@
       "anchor": "abitmorehex:randomizelist",
       "input": "list, optional number",
       "output": "list",
-      "text": "Remove a list and a optional number, then randomize order of lists contents up to a certain degree wich might be limited by the number."
+      "text": "Remove a list and a optional number, then randomize order of lists contents up to a certain degree wich might be limited by the number. Return the randomized List"
     },
     {
       "type": "hexcasting:pattern",
@@ -20,7 +20,7 @@
       "anchor": "abitmorehex:thoughtclear",
       "input": "list, number",
       "output": "list",
-      "text": "Remove a list and a positive number, and returns a list with every nth element removed."
+      "text": "Remove a list and a positive number, then returns a list with every nth element removed."
     },
     {
       "type": "hexcasting:pattern",

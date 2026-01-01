@@ -1,0 +1,159 @@
+{
+  name: "abitmorehex.book.patterns.spells.reading_writing",
+  category: "hexcasting:collection_of_casters",
+  icon: "abitmorehex:stitched_scribbles",
+  advancement: "hexcasting:root",
+  pages: [
+    {
+      "type": "patchouli:text",
+      "text": "abitmorehex.book.patterns.spells.reading_writing.intro"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:head/write",
+      anchor: "abitmorehex:head/write",
+      input: "any",
+      output: "",
+      text: "abitmorehex.book.patterns.spells.reading_writing.headwrite"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:chest/write",
+      anchor: "abitmorehex:chest/write",
+      input: "any",
+      output: "",
+      text: "abitmorehex.book.patterns.spells.reading_writing.chestwrite"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:legs/write",
+      anchor: "abitmorehex:legs/write",
+      input: "any",
+      output: "",
+      text: "abitmorehex.book.patterns.spells.reading_writing.legswrite"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:feet/write",
+      anchor: "abitmorehex:feet/write",
+      input: "any",
+      output: "",
+      text: "abitmorehex.book.patterns.spells.reading_writing.feetwrite"
+    },
+
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:head/read",
+      anchor: "abitmorehex:head/read",
+      input: "",
+      output: "any",
+      text: "abitmorehex.book.patterns.spells.reading_writing.headread"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:chest/read",
+      anchor: "abitmorehex:chest/read",
+      input: "",
+      output: "any",
+      text: "abitmorehex.book.patterns.spells.reading_writing.chestread"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:legs/read",
+      anchor: "abitmorehex:legs/read",
+      input: "",
+      output: "any",
+      text: "abitmorehex.book.patterns.spells.reading_writing.legsread"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:feet/read",
+      anchor: "abitmorehex:feet/read",
+      input: "",
+      output: "any",
+      text: "abitmorehex.book.patterns.spells.reading_writing.feetread"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:head/writeable",
+      anchor: "abitmorehex:head/writeable",
+      input: "",
+      output: "bool",
+      text: "abitmorehex.book.patterns.spells.reading_writing.headwable"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:chest/writeable",
+      anchor: "abitmorehex:chest/writeable",
+      input: "",
+      output: "bool",
+      text: "abitmorehex.book.patterns.spells.reading_writing.chestwable"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:legs/writeable",
+      anchor: "abitmorehex:legs/writeable",
+      input: "",
+      output: "bool",
+      text: "abitmorehex.book.patterns.spells.reading_writing.legswable"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:feet/writeable",
+      anchor: "abitmorehex:feet/writeable",
+      input: "",
+      output: "bool",
+      text: "abitmorehex.book.patterns.spells.reading_writing.feetwable"
+    },
+
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:head/readable",
+      anchor: "abitmorehex:head/readable",
+      input: "",
+      output: "bool",
+      text: "abitmorehex.book.patterns.spells.reading_writing.headrable"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:chest/readable",
+      anchor: "abitmorehex:chest/readable",
+      input: "",
+      output: "bool",
+      text: "abitmorehex.book.patterns.spells.reading_writing.chestrable"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:legs/readable",
+      anchor: "abitmorehex:legs/readable",
+      input: "",
+      output: "bool",
+      text: "abitmorehex.book.patterns.spells.reading_writing.legsrable"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:feet/readable",
+      anchor: "abitmorehex:feet/readable",
+      input: "",
+      output: "bool",
+      text: "abitmorehex.book.patterns.spells.reading_writing.feetrable"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:readsubiota",
+      anchor: "abitmorehex:readsubiota",
+      input: "",
+      output: "any",
+      text: "abitmorehex.book.patterns.spells.reading_writing.readsubiota"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:writesubiota",
+      anchor: "abitmorehex:writesubiota",
+      input: "any",
+      output: "",
+      text: "abitmorehex.book.patterns.spells.reading_writing.writesubiota"
+    }
+
+  ]
+}

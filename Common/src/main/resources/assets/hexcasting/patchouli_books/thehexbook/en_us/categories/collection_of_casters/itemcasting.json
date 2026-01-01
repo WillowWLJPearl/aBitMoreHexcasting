@@ -1,0 +1,7 @@
+{
+  "name": "abitmorehex.category.itemcasting",
+  "icon": "abitmorehex:staff/miku",
+  "description": "abitmorehex.category.itemcasting.desc",
+  "parent": "hexcasting:collection_of_casters",
+  "sortnum": 3
+}

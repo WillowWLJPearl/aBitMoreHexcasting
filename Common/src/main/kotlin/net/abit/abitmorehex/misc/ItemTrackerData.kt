@@ -1,4 +1,4 @@
-package net.abit.abitmorehex.api
+package net.abit.abitmorehex.misc
 
 import at.petrak.hexcasting.api.utils.serializeToNBT
 import net.minecraft.client.Minecraft

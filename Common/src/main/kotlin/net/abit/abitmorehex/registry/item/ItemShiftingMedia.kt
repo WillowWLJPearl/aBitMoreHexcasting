@@ -11,14 +11,13 @@ import at.petrak.hexcasting.client.ClientTickCounter
 import at.petrak.hexcasting.common.items.storage.ItemFocus
 import at.petrak.hexcasting.common.lib.hex.HexIotaTypes
 import at.petrak.hexcasting.xplat.IXplatAbstractions
-import net.abit.abitmorehex.api.ItemTrackerData
-import net.abit.abitmorehex.api.SubIotaHolderItem
+import net.abit.abitmorehex.misc.ItemTrackerData
+import net.abit.abitmorehex.misc.SubIotaHolderItem
 import net.abit.abitmorehex.casting.iota.ItemIota
 import net.abit.abitmorehex.networking.AbitmorehexNetworking
 import net.abit.abitmorehex.networking.msg.CastFailureMessage
 import net.abit.abitmorehex.networking.msg.CastSuccessMessage
 import net.abit.abitmorehex.registry.eval.SubCastingEnvironment
-import net.fabricmc.loader.impl.lib.sat4j.core.Vec
 import net.minecraft.ChatFormatting
 import net.minecraft.core.BlockPos
 import net.minecraft.core.registries.BuiltInRegistries
@@ -76,12 +75,11 @@ class ItemShiftingMedia(properties: Properties) : Item(properties), IotaHolderIt
 
          fun onInventoryChanged(stack : ItemStack, vec3: Vec3, inventory : Container, world: Level) {
             for(item in getTargets(stack)) {
-                if(item == Items.COMPARATOR) {
+                if(item == Items.REPEATER) {
                     val level = world as ServerLevel
                     val image: CastingImage = CastingImage()
                     val Iotalist = readIotaList(stack, world)
                     val slot = findSlotByReference(inventory, stack)
-                    println(Iotalist)
                     CastingVM(
                         image = image,
                         env = SubCastingEnvironment(level, vec3, slot, stack)

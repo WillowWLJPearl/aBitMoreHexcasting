@@ -1,16 +1,28 @@
 {
   name: "abitmorehex.book.patterns.spells.unstable",
   category: "hexcasting:patterns/spells",
-  icon: "minecraft:snowball",
+  icon: "minecraft:black_dye",
   advancement: "hexcasting:root",
   pages: [
+    {
+      "type": "patchouli:text",
+      "text": "abitmorehex.book.patterns.spells.unstable.intro"
+    },
     {
       type: "hexcasting:pattern",
       op_id: "abitmorehex:minorteleport",
       anchor: "abitmorehex:minorteleport",
-      input: "entity, vec3, (num)",
+      input: "entity, vec3, num",
       output: "",
-      text: "abitmorehex.book.patterns.spells.willows_spells.minorteleport"
+      text: "abitmorehex.book.patterns.spells.unstable.minorteleport"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:translocation",
+      anchor: "abitmorehex:translocation",
+      input: "vec3, vec3, num",
+      output: "",
+      text: "abitmorehex.book.patterns.spells.unstable.translocation"
     }
   ],
 }

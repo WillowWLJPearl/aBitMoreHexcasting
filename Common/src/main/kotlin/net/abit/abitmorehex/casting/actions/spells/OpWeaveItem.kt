@@ -6,12 +6,11 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import net.abit.abitmorehex.api.ItemTrackerData
+import net.abit.abitmorehex.misc.ItemTrackerData
 import net.abit.abitmorehex.casting.iota.ItemIota
 import net.minecraft.world.entity.item.ItemEntity
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerLevel
-import net.minecraft.world.phys.Vec3
 
 object OpWeaveItem : ConstMediaAction {
     override val argc = 2

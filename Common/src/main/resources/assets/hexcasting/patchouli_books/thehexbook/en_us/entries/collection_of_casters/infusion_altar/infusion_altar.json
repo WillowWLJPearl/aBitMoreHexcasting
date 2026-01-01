@@ -1,5 +1,5 @@
 {
-  "name": "abitmorehex.entry.infusion_altar",
+  "name": "abitmorehex.entry.infusion_altar_spells",
   "category": "hexcasting:collection_of_casters/infusion_altar",
   "icon": "minecraft:diamond",
   "sortnum": 0,
@@ -18,9 +18,9 @@
       "type": "hexcasting:pattern",
       "op_id": "abitmorehex:activateroottable",
       "anchor": "abitmorehex:activateroottable",
-      "input": "vec3, entity",
+      "input": "vec3",
       "output": "",
-      "text": "Takes a vec3 and a entity, then it will activtate the infusion altar - cast the pattern stored in the front iota holder as the entity."
+      "text": "Takes a vec3, then it will activtate the infusion altar - it casts the pattern list stored in the front iota holder."
     }
   ]
 }

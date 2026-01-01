@@ -1,5 +1,5 @@
 {
-  "name": "abitmorehex.entry.infusion_altar",
+  "name": "abitmorehex.entry.infusion_altar_use",
   "category": "hexcasting:collection_of_casters/infusion_altar",
   "icon": "minecraft:diamond",
   "sortnum": 0,
@@ -12,13 +12,13 @@
       "anchor": "abitmorehex:containerpos",
       "input": "",
       "output": "vec3",
-      "text": ""
+      "text": "abitmorehex.book.patterns.spells.general.containerpos"
     },
     {
       "type": "hexcasting:pattern",
       "op_id": "abitmorehex:infusioncrafting",
       "anchor": "abitmorehex:infusioncrafting",
-      "input": "[entity]",
+      "input": "[entity]|[item]",
       "output": "",
       "text": "Remove a list of entities, then it will try to infuse them onto the main item"
     }

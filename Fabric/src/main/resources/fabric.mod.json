@@ -23,6 +23,13 @@
       "adapter": "kotlin",
       "value": "net.abit.abitmorehex.fabric.FabricAbitmorehexClient"
     }],
+    "fabric-datagen": [ "net.abit.abitmorehex.fabric.datagen.FabricDatagen"],
+    "rei_client": [
+      "net.abit.abitmorehex.fabric.rei.plugin.AbitmorehexREIPlugin"
+    ],
+    "emi": [
+      "net.abit.abitmorehex.plugin.AbitmorehexEmiPlugin"
+    ],
     "modmenu": [{
       "adapter": "kotlin",
       "value": "net.abit.abitmorehex.fabric.FabricAbitmorehexModMenu"

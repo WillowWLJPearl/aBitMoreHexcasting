@@ -1,0 +1,28 @@
+{
+  name: "abitmorehex.book.patterns.itemcasting.rw",
+  category: "hexcasting:collection_of_casters/itemcasting",
+  icon: "minecraft:glowstone",
+  advancement: "hexcasting:root",
+  pages: [
+    {
+      "type": "patchouli:text",
+      "text": "abitmorehex.book.patterns.itemcasting.rw.intro"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:writecurrentsubiota",
+      anchor: "abitmorehex:writecurrentsubiota",
+      input: "any",
+      output: "",
+      text: "abitmorehex.book.patterns.itemcasting.rw.write"
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "abitmorehex:readcurrentsubiota",
+      anchor: "abitmorehex:readcurrentsubiota",
+      input: "",
+      output: "any",
+      text: "abitmorehex.book.patterns.itemcasting.rw.read"
+    }
+  ]
+}

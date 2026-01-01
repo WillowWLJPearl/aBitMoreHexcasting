@@ -1,0 +1,15 @@
+{
+  "type": "hexcasting:brainsweep",
+  "blockIn": {
+    "type": "block",
+    "block": "abitmorehex:empty_jar"
+  },
+  "cost": 10000,
+  "entityIn": {
+    "type": "villager",
+    "minLevel": 3
+  },
+  "result": {
+    "name": "abitmorehex:soul_jar"
+  }
+}

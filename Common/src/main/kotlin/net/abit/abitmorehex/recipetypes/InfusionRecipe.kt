@@ -2,6 +2,7 @@ package net.abit.abitmorehex.recipetypes
 
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
+import net.abit.abitmorehex.blockentities.RootedTable
 import net.abit.abitmorehex.registry.AbitmorehexRecipeTypes
 import net.abit.abitmorehex.registry.AbitmorehexRecipes
 import net.minecraft.core.RegistryAccess
@@ -13,7 +14,9 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.crafting.CraftingBookCategory
 import net.minecraft.world.item.crafting.CraftingRecipe
 import net.minecraft.world.item.crafting.Ingredient
+import net.minecraft.world.item.crafting.Recipe
 import net.minecraft.world.item.crafting.RecipeSerializer
+import net.minecraft.world.item.crafting.RecipeType
 import net.minecraft.world.item.crafting.ShapedRecipe
 import net.minecraft.world.level.Level
 
@@ -24,11 +27,11 @@ class InfusionRecipe(
     val extras: List<Ingredient>,
     val output: ItemStack,
     val extraAttributes: JsonObject?
-) : CraftingRecipe {
-    override fun matches(container: CraftingContainer, level: Level): Boolean =
+) : Recipe<InfusionContainer> {
+    override fun matches(container: InfusionContainer, level: Level): Boolean =
         false
 
-    override fun assemble(container: CraftingContainer, registryAccess: RegistryAccess): ItemStack =
+    override fun assemble(container: InfusionContainer, registryAccess: RegistryAccess): ItemStack =
         output.copy()
 
     override fun canCraftInDimensions(width: Int, height: Int): Boolean = true
@@ -41,7 +44,10 @@ class InfusionRecipe(
     override fun getSerializer(): RecipeSerializer<*> =
         AbitmorehexRecipes.INFUSION_SERIALIZER.value
 
-    override fun category(): CraftingBookCategory = CraftingBookCategory.MISC
+    override fun getType(): RecipeType<*>? {
+        return AbitmorehexRecipeTypes.INFUSION.value
+    }
+
 
     override fun getToastSymbol(): ItemStack =
         base.items.firstOrNull() ?: ItemStack.EMPTY
