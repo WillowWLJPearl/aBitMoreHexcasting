@@ -6,6 +6,7 @@ import at.petrak.hexcasting.api.casting.math.HexDir
 import at.petrak.hexcasting.api.casting.math.HexPattern
 import at.petrak.hexcasting.common.lib.HexRegistries
 import at.petrak.hexcasting.common.lib.hex.HexActions
+import dev.architectury.platform.Platform
 import net.abit.abitmorehex.casting.actions.altars.OpContainerPos
 import net.abit.abitmorehex.casting.actions.altars.OpInfusionCrafting
 import net.abit.abitmorehex.casting.actions.dicts.*
@@ -57,7 +58,6 @@ object AbitmorehexActions : AbitmorehexRegistrar<ActionRegistryEntry>(
     val READSUBIOTA = make("readsubiota", HexDir.EAST, "aaqawqqqq", OpReadSub)
     val WRITESUBIOTA = make("writesubiota", HexDir.NORTH_EAST, "ddeeeeewd", OpWriteSub)
 
-    val OPGETSLOT = make("getitemslot", HexDir.NORTH_EAST, "qaqqaea", OpGetCurrentSlot)
     val READCURRENTSUBIOTA = make("readcurrentsubiota", HexDir.EAST, "aqqwaqdqa", OpReadCurrentSub)
     val WRITECURRENTSUBIOTA = make("writecurrentsubiota", HexDir.WEST, "deewdeaed", OpWriteCurrentSub)
     val CASITEMSPELL = make("castitemspell", HexDir.SOUTH_EAST, "deadaed", OpCastItemSpell)
@@ -85,6 +85,17 @@ object AbitmorehexActions : AbitmorehexRegistrar<ActionRegistryEntry>(
     //Altar Actions
     val INFUSIONCRAFTING = make("infusioncrafting", HexDir.NORTH_WEST, "qqqqqawwdeqdqedadqdqd", OpInfusionCrafting)
 
+    fun registerspecial(): AbitmorehexRegistrar<ActionRegistryEntry>.Entry<ActionRegistryEntry> {
+        if(!Platform.isModLoaded("hexal")) {
+            val OPGETSLOT = make("getitemslot", HexDir.NORTH_EAST, "qaqqaea", OpGetCurrentSlot)
+            return OPGETSLOT
+        } else {
+            val OPGETSLOT = make("getitemslot", HexDir.EAST, "qqaqqaeaw", OpGetCurrentSlot)
+            return OPGETSLOT
+        }
+    }
+
+    val OPGETSLOT = registerspecial()
     private fun make(name: String, startDir: HexDir, signature: String, action: Action) =
         make(name, startDir, signature) { action }
 
