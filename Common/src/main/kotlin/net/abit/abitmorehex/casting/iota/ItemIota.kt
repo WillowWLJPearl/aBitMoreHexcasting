@@ -36,24 +36,13 @@ class ItemIota(val id: UUID) : Iota(TYPE, id) {
                     ?.let { ItemIota(it) }
 
             override fun display(tag: Tag): Component {
-                val uuidStr = (tag as? StringTag)?.asString ?: return  Component.literal("Null").withStyle(colorStyle)
-                val uuid = runCatching { UUID.fromString(uuidStr) }.getOrNull() ?: return  Component.literal("Null").withStyle(colorStyle)
+                val uuidStr = (tag as? StringTag)?.asString
+                    ?: return Component.literal("Null").withStyle(colorStyle)
 
-                // Grab *any* Level context from the client
-                val level = Minecraft.getInstance().level
-                val data  = ItemTrackerData.getGlobal(level as Level)
-                val stack = data?.map?.get(uuid)
+                val uuid = runCatching { UUID.fromString(uuidStr) }.getOrNull()
+                    ?: return Component.literal("Null").withStyle(colorStyle)
 
-                if (stack == null || stack.isEmpty) {
-                    return  Component.literal("Null").withStyle(colorStyle)
-                }
-
-                // 3) Construct “[item!namespace:path]: TranslatedName”
-                val idString = stack.item.`arch$registryName`()!!.toString()
-                val nameComp = stack.displayName.copy() as MutableComponent
-                return Component.literal("[item!$idString]: ")
-                    .withStyle(colorStyle)
-                    .append(nameComp)
+                return Component.literal("[item!$uuid]").withStyle(colorStyle)
             }
 
             override fun color() = 0xFF00BFFF.toInt()  // light blue

@@ -70,6 +70,8 @@ object AbitmorehexActions : AbitmorehexRegistrar<ActionRegistryEntry>(
     val MEDIAFYITEM = make("mediafyitem", HexDir.WEST, "waaqaeq", OpMediafyItem)
     val WEAVEITEM = make("weaveitem", HexDir.WEST, "wddedqe", OpWeaveItem)
 
+    val MATERIALIZETHOUGHT = make("materializethought", HexDir.EAST, "qaawa", OpMaterializeThought)
+
     val THROWITEM = make("throwitem", HexDir.NORTH_EAST, "waaqqaaw", OpThrowItem)
     val SWITCHITEM = make("switchitem", HexDir.SOUTH_WEST, "awqqqwaqe", OpSwitchSlots)
 
@@ -85,17 +87,9 @@ object AbitmorehexActions : AbitmorehexRegistrar<ActionRegistryEntry>(
     //Altar Actions
     val INFUSIONCRAFTING = make("infusioncrafting", HexDir.NORTH_WEST, "qqqqqawwdeqdqedadqdqd", OpInfusionCrafting)
 
-    fun registerspecial(): AbitmorehexRegistrar<ActionRegistryEntry>.Entry<ActionRegistryEntry> {
-        if(!Platform.isModLoaded("hexal")) {
-            val OPGETSLOT = make("getitemslot", HexDir.NORTH_EAST, "qaqqaea", OpGetCurrentSlot)
-            return OPGETSLOT
-        } else {
-            val OPGETSLOT = make("getitemslot", HexDir.EAST, "qqaqqaeaw", OpGetCurrentSlot)
-            return OPGETSLOT
-        }
-    }
 
-    val OPGETSLOT = registerspecial()
+    val OPGETSLOT = make("getitemslot", HexDir.EAST, "qqaqqaeaw", OpGetCurrentSlot)
+
     private fun make(name: String, startDir: HexDir, signature: String, action: Action) =
         make(name, startDir, signature) { action }
 

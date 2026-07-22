@@ -8,6 +8,12 @@
     "staff": {
       "miku": "Miku Staff"
     },
+    "thought.empty": "Empty Thought",
+    "thought.small": "Small Thought",
+    "thought": "Thought",
+    "thought.big": "Big Thought",
+    "thought.ingenious": "Ingenious Thought",
+    "thought.incomprehensible": "Incomprehensible Thought"
   },
   "emi.category.abitmorehex.rooted_table_item": "Infusion Crafting",
   "block.abitmorehex": {

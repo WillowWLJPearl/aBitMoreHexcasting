@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": { "layer0": "abitmorehex:item/thoughts/thought_thought" },
+  "overrides": [
+    { "predicate": { "abitmorehex:state": 0.10 }, "model": "abitmorehex:item/empty_thought" },
+    { "predicate": { "abitmorehex:state": 0.25 }, "model": "abitmorehex:item/small_thought" },
+    { "predicate": { "abitmorehex:state": 0.50 }, "model": "abitmorehex:item/big_thought" },
+    { "predicate": { "abitmorehex:state": 0.75 }, "model": "abitmorehex:item/ingenious_thought" },
+    { "predicate": { "abitmorehex:state": 1.0 }, "model": "abitmorehex:item/incomprehensible_thought" }
+  ]
+}

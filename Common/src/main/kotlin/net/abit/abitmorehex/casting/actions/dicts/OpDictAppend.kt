@@ -20,7 +20,11 @@ object OpDictAppend : ConstMediaAction {
             throw MishapOthersName(env.castingEntity as Player)
 
         // expose the old map, merge in the new pair, and build a brand‑new DictIota
-        val newEntries = dict.asMap() + (key to value)
+        var dictcopy = dict.asMap()
+        if(dictcopy.containsKey(key)) {
+            dictcopy= dict.asMap().minus(key)
+        }
+        val newEntries = dictcopy + (key to value)
         val newdict = DictIota(newEntries)
 
         return listOf(newdict)

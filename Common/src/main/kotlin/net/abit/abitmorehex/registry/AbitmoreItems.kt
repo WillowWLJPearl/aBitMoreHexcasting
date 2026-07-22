@@ -13,6 +13,7 @@ import net.abit.abitmorehex.registry.item.AncientParchment
 import net.abit.abitmorehex.registry.item.ItemShiftingMedia
 import net.abit.abitmorehex.registry.item.LibrariansScryingLens
 import net.abit.abitmorehex.registry.item.StitchedScribbles
+import net.abit.abitmorehex.registry.item.Thought
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.chat.Component
@@ -41,6 +42,7 @@ object AbitmoreItems
 
     val LIBRARIANS_SCRYING_LENS = register("librarians_lens") { LibrariansScryingLens(unstackable()) }
 
+    val THOUGHT = register("thought") { Thought(unstackable()) }
     val ANCIENT_PARCHMENT = register("ancient_parchment") { AncientParchment(unstackable()) }
 
     val AKASHIC_WOOD_CIRCLET = register("akashic_wood_circlet") { AkashicWoodCirclet(

@@ -30,7 +30,7 @@ object LootInjector {
             // 5% chance the parchment appears at all
             ctx.addPool(
                 LootPool.lootPool()
-                    .`when`(LootItemRandomChanceCondition.randomChance(0.05f))
+                    .`when`(LootItemRandomChanceCondition.randomChance(0.10f))
                     .setRolls(ConstantValue.exactly(1f))
                     // Variant A (most common)
                     .add(
