@@ -214,9 +214,6 @@
 		},
 		"fixed": {
 			"translation": [0, 0, 7.75]
-		},
-		"on_shelf": {
-			"translation": [0, 0, 3.25]
 		}
 	},
 	"groups": [
