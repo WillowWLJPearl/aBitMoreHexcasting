@@ -17,6 +17,7 @@ export_dir = "src/hexdoc_abitmorehex/_export/generated"
 
 [textures]
 missing = [
+    "abitmorehex:librarians_lens",
     "abitmorehex:akashic_wood_circlet",
 ]
 
