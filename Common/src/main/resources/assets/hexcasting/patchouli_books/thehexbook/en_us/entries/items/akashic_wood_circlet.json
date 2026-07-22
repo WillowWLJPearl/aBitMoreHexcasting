@@ -8,11 +8,6 @@
     {
       "type": "patchouli:text",
       "text": "abitmorehex.page.akashic_wood_circlet.1"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "abitmorehex:akashic_wood_circlet",
-      "text": "abitmorehex.page.akashic_wood_circlet.crafting.desc"
     }
   ]
 }
