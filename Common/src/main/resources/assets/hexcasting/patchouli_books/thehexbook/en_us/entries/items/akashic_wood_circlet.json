@@ -12,15 +12,7 @@
     {
       "type": "patchouli:crafting",
       "recipe": "abitmorehex:akashic_wood_circlet",
-      "text": "abitmorehex.page.akashic_wood_circlet.crafting.desc",
-      "flag": "!mod:hexdoc:web_only"
-    },
-    {
-      "type": "patchouli:spotlight",
-      "item": "abitmorehex:akashic_wood_circlet",
-      "text": "abitmorehex.page.akashic_wood_circlet.crafting.desc",
-      "link_recipe": true,
-      "flag": "mod:hexdoc:web_only"
+      "text": "abitmorehex.page.akashic_wood_circlet.crafting.desc"
     }
   ]
 }
