@@ -15,6 +15,11 @@ resource_dirs = [  # top takes priority
 ]
 export_dir = "src/hexdoc_abitmorehex/_export/generated"
 
+[textures]
+missing = [
+    "abitmorehex:akashic_wood_circlet",
+]
+
 [template]
 icon = "{$_common.src}/main/resources/assets/abitmorehex/icon.png"
 include = [
